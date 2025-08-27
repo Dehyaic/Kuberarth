@@ -2,170 +2,46 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Kuberarth</title>
+  <title>My OC World</title>
   <style>
     body {
       font-family: Arial, sans-serif;
-      background: #f7f7fa;
+      background: #f2f2f7;
       margin: 0;
-      padding: 0;
-      line-height: 1.6;
-    }
-    header {
-      background: #333;
-      color: #fff;
       padding: 20px;
       text-align: center;
     }
-    nav {
-      background: #444;
-      padding: 10px;
-      text-align: center;
+    h1 {
+      margin-bottom: 20px;
     }
-    nav a {
-      color: #fff;
-      margin: 0 15px;
+    .oc-list a {
+      display: block;
+      background: #fff;
+      margin: 10px auto;
+      padding: 15px 20px;
+      max-width: 400px;
       text-decoration: none;
-      font-weight: bold;
-    }
-    nav a:hover {
-      text-decoration: underline;
-    }
-    .container {
-      max-width: 900px;
-      margin: auto;
-      padding: 20px;
-    }
-    .oc-card {
-      background: white;
+      color: #333;
       border-radius: 12px;
-      padding: 15px;
-      margin: 10px 0;
       box-shadow: 0 4px 8px rgba(0,0,0,0.15);
-      cursor: pointer;
+      transition: 0.2s;
     }
-    .oc-card h2 {
-      margin: 0;
-    }
-    .details {
-      display: none;
-      margin-top: 10px;
-      color: #444;
-    }
-    footer {
-      background: #333;
-      color: #fff;
-      text-align: center;
-      padding: 10px;
-      margin-top: 30px;
+    .oc-list a:hover {
+      background: #e0e0ff;
     }
   </style>
 </head>
 <body>
 
-  <header>
-    <h1>Welcome to Kuberarth</h1>
-    <p>Characters • Stories • Connections</p>
-  </header>
+  <h1>Welcome to My OC World</h1>
+  <p>Click a character to see their profile:</p>
 
-  <nav>
-    <a href="#ocs">Characters</a>
-    <a href="#map">Relationship Map</a>
-    <a href="#about">About</a>
-  </nav>
-
-  <div class="container">
-
-    <!-- Characters Section -->
-    <section id="ocs">
-      <h2>My Characters</h2>
-
-      <div class="oc-card" onclick="toggleDetails(this)">
-        <h2>Dehyaic Deylaic Aknight</h2>
-        <div class="details">
-          <p>Demglegjon's number one tactical breacher. Champion of Raxiseah. Friendly Rockwolf Âni</p>
-        </div>
-      </div>
-
-      <div class="oc-card" onclick="toggleDetails(this)">
-        <h2>Yaelich Aknight</h2>
-        <div class="details">
-          <p>Second Commander of Demglegjon's "Firmtropers II" division. Champion of Trakerusan. Owns a café for her free times and hates when someone calls her short</p>
-        </div>
-      </div>
-
-      <!-- Add more OC cards like above -->
-    </section>
-
-    <!-- Relationship Map -->
-    <section id="map">
-      <h2>Relationship Map</h2>
-      <p>Click and drag to explore connections.</p>
-      <canvas id="relationshipMap" width="800" height="500" style="border:1px solid #ccc;"></canvas>
-    </section>
-
-    <!-- About -->
-    <section id="about">
-      <h2>About This World</h2>
-      <p>Here you can describe your universe, factions, or any lore that connects your OCs.</p>
-    </section>
-
+  <div class="oc-list">
+    <a href="dehy.html" target="_blank">Dehy (Dehyaic)</a>
+    <a href="morradiant.html" target="_blank">Morradiant</a>
+    <a href="arvera.html" target="_blank">Arvera</a>
+    <a href="liora.html" target="_blank">Liora</a>
   </div>
-
-  <footer>
-    <p>Made with ❤️ using GitHub Pages</p>
-  </footer>
-
-  <script>
-    // Toggle character details
-    function toggleDetails(card) {
-      let details = card.querySelector(".details");
-      details.style.display = (details.style.display === "block") ? "none" : "block";
-    }
-
-    // Simple interactive relationship map
-    const canvas = document.getElementById("relationshipMap");
-    const ctx = canvas.getContext("2d");
-
-    let nodes = [
-      { x: 100, y: 100, name: "Dehyaic Deylaic Aknight" },
-      { x: 300, y: 200, name: "Yaelich Aknight" },
-      { x: 300, y: 300, name: "Archillione Aknight" }
-    ];
-
-    let edges = [
-  { from: 0, to: 1, label: "cousin" },    // Dehy ↔ Yaelich
-  { from: 1, to: 2, label: "daughter" },        // Yaelich ↔ Archi
-];
-
-    function draw() {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-      // Draw edges
-      ctx.strokeStyle = "#888";
-      ctx.lineWidth = 2;
-      edges.forEach(([a,b]) => {
-        ctx.beginPath();
-        ctx.moveTo(nodes[a].x, nodes[a].y);
-        ctx.lineTo(nodes[b].x, nodes[b].y);
-        ctx.stroke();
-      });
-      // Draw nodes
-      nodes.forEach(node => {
-        ctx.beginPath();
-        ctx.arc(node.x, node.y, 30, 0, Math.PI*2);
-        ctx.fillStyle = "#fff";
-        ctx.fill();
-        ctx.strokeStyle = "#333";
-        ctx.stroke();
-        ctx.fillStyle = "#000";
-        ctx.textAlign = "center";
-        ctx.font = "14px Arial";
-        ctx.fillText(node.name, node.x, node.y+4);
-      });
-    }
-
-    draw();
-  </script>
 
 </body>
 </html>
