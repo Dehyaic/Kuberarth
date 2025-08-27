@@ -128,7 +128,7 @@
     const ctx = canvas.getContext("2d");
 
     let nodes = [
-      { x: 500, y: 500, name: "Dehyaic Deylaic Aknight" },
+      { x: 100, y: 100, name: "Dehyaic Deylaic Aknight" },
       { x: 300, y: 200, name: "Yaelich Aknight" },
       { x: 300, y: 300, name: "Archillione Aknight" }
     ];
@@ -150,23 +150,19 @@
         ctx.stroke();
       });
       // Draw nodes
-      edges.forEach(edge => {
-  // Draw line
-  ctx.beginPath();
-  ctx.moveTo(nodes[edge.from].x, nodes[edge.from].y);
-  ctx.lineTo(nodes[edge.to].x, nodes[edge.to].y);
-  ctx.stroke();
-
-  // Find midpoint of line
-  let midX = (nodes[edge.from].x + nodes[edge.to].x) / 2;
-  let midY = (nodes[edge.from].y + nodes[edge.to].y) / 2;
-
-  // Draw text label
-  ctx.fillStyle = "#000";
-  ctx.font = "12px Arial";
-  ctx.textAlign = "center";
-  ctx.fillText(edge.label, midX, midY - 5);
-});
+      nodes.forEach(node => {
+        ctx.beginPath();
+        ctx.arc(node.x, node.y, 30, 0, Math.PI*2);
+        ctx.fillStyle = "#fff";
+        ctx.fill();
+        ctx.strokeStyle = "#333";
+        ctx.stroke();
+        ctx.fillStyle = "#000";
+        ctx.textAlign = "center";
+        ctx.font = "14px Arial";
+        ctx.fillText(node.name, node.x, node.y+4);
+      });
+    }
 
     draw();
   </script>
