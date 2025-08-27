@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My OC World</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f7f7fa;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+    }
+    header {
+      background: #333;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+    nav {
+      background: #444;
+      padding: 10px;
+      text-align: center;
+    }
+    nav a {
+      color: #fff;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    .container {
+      max-width: 900px;
+      margin: auto;
+      padding: 20px;
+    }
+    .oc-card {
+      background: white;
+      border-radius: 12px;
+      padding: 15px;
+      margin: 10px 0;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+      cursor: pointer;
+    }
+    .oc-card h2 {
+      margin: 0;
+    }
+    .details {
+      display: none;
+      margin-top: 10px;
+      color: #444;
+    }
+    footer {
+      background: #333;
+      color: #fff;
+      text-align: center;
+      padding: 10px;
+      margin-top: 30px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Welcome to My OC World</h1>
+    <p>Characters • Stories • Connections</p>
+  </header>
+
+  <nav>
+    <a href="#ocs">Characters</a>
+    <a href="#map">Relationship Map</a>
+    <a href="#about">About</a>
+  </nav>
+
+  <div class="container">
+
+    <!-- Characters Section -->
+    <section id="ocs">
+      <h2>My Characters</h2>
+
+      <div class="oc-card" onclick="toggleDetails(this)">
+        <h2>Arvera</h2>
+        <div class="details">
+          <p>A rebellious punk girl who loves chaos. Known to cause trouble in the kitchen...</p>
+        </div>
+      </div>
+
+      <div class="oc-card" onclick="toggleDetails(this)">
+        <h2>Morradiant</h2>
+        <div class="details">
+          <p>Son of Zerathum, heir of a radiant bloodline. Stern but honorable.</p>
+        </div>
+      </div>
+
+      <!-- Add more OC cards like above -->
+    </section>
+
+    <!-- Relationship Map -->
+    <section id="map">
+      <h2>Relationship Map</h2>
+      <p>Click and drag to explore connections.</p>
+      <canvas id="relationshipMap" width="800" height="500" style="border:1px solid #ccc;"></canvas>
+    </section>
+
+    <!-- About -->
+    <section id="about">
+      <h2>About This World</h2>
+      <p>Here you can describe your universe, factions, or any lore that connects your OCs.</p>
+    </section>
+
+  </div>
+
+  <footer>
+    <p>Made with ❤️ using GitHub Pages</p>
+  </footer>
+
+  <script>
+    // Toggle character details
+    function toggleDetails(card) {
+      let details = card.querySelector(".details");
+      details.style.display = (details.style.display === "block") ? "none" : "block";
+    }
+
+    // Simple interactive relationship map
+    const canvas = document.getElementById("relationshipMap");
+    const ctx = canvas.getContext("2d");
+
+    let nodes = [
+      { x: 100, y: 100, name: "Arvera" },
+      { x: 300, y: 200, name: "Morradiant" },
+      { x: 500, y: 120, name: "Zerathum" }
+    ];
+
+    let edges = [
+      [0,1], // Arvera ↔ Morradiant
+      [1,2]  // Morradiant ↔ Zerathum
+    ];
+
+    function draw() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      // Draw edges
+      ctx.strokeStyle = "#888";
+      ctx.lineWidth = 2;
+      edges.forEach(([a,b]) => {
+        ctx.beginPath();
+        ctx.moveTo(nodes[a].x, nodes[a].y);
+        ctx.lineTo(nodes[b].x, nodes[b].y);
+        ctx.stroke();
+      });
+      // Draw nodes
+      nodes.forEach(node => {
+        ctx.beginPath();
+        ctx.arc(node.x, node.y, 30, 0, Math.PI*2);
+        ctx.fillStyle = "#fff";
+        ctx.fill();
+        ctx.strokeStyle = "#333";
+        ctx.stroke();
+        ctx.fillStyle = "#000";
+        ctx.textAlign = "center";
+        ctx.font = "14px Arial";
+        ctx.fillText(node.name, node.x, node.y+4);
+      });
+    }
+
+    draw();
+  </script>
+
+</body>
+</html>
