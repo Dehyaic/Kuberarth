@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>My OC World</title>
+  <title>Kuberarth</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -64,7 +64,7 @@
 <body>
 
   <header>
-    <h1>Welcome to My OC World</h1>
+    <h1>Welcome to Kuberarth</h1>
     <p>Characters • Stories • Connections</p>
   </header>
 
@@ -81,16 +81,16 @@
       <h2>My Characters</h2>
 
       <div class="oc-card" onclick="toggleDetails(this)">
-        <h2>Arvera</h2>
+        <h2>Dehyaic Deylaic Aknight</h2>
         <div class="details">
-          <p>A rebellious punk girl who loves chaos. Known to cause trouble in the kitchen...</p>
+          <p>Demglegjon's number one tactical breacher. Champion of Raxiseah. Friendly Rockwolf Âni</p>
         </div>
       </div>
 
       <div class="oc-card" onclick="toggleDetails(this)">
-        <h2>Morradiant</h2>
+        <h2>Yaelich Aknight</h2>
         <div class="details">
-          <p>Son of Zerathum, heir of a radiant bloodline. Stern but honorable.</p>
+          <p>Second Commander of Demglegjon's "Firmtropers II" division. Champion of Trakerusan. Owns a café for her free times and hates when someone calls her short</p>
         </div>
       </div>
 
@@ -128,14 +128,14 @@
     const ctx = canvas.getContext("2d");
 
     let nodes = [
-      { x: 100, y: 100, name: "Arvera" },
-      { x: 300, y: 200, name: "Morradiant" },
-      { x: 500, y: 120, name: "Zerathum" }
+      { x: 100, y: 100, name: "Dehyaic Deylaic Aknight" },
+      { x: 300, y: 200, name: "Yaelich Aknight" },
+      { x: 500, y: 120, name: "Archillione Aknight" }
     ];
 
     let edges = [
-      [0,1], // Arvera ↔ Morradiant
-      [1,2]  // Morradiant ↔ Zerathum
+      [0,1], // Archillione Aknight ↔ Yaelich Aknight
+      [1,2]  // Yaelich Aknight ↔ Dehyaic Deylaic Aknight
     ];
 
     function draw() {
