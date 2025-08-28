@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Entrance of Abyss</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #111;
+      color: #eee;
+      text-align: center;
+      padding: 20px;
+    }
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+    #storyBox {
+      margin-top: 20px;
+      padding: 15px;
+      border-radius: 8px;
+      background: rgba(0,0,0,0.7);
+      display: inline-block;
+      max-width: 910px;
+      max-height: 445px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Entrance of Abyss</h1>
+
+  <!-- Your drawing -->
+  <img src="Entrance of Abyss.png" alt="Entrance of Abyss" usemap="#hillmap">
+
+  <!-- Clickable zones -->
+  <map name="hillmap">
+    <!-- Abyss -->
+    <area shape="circle" coords="455,435,40" alt="Abyss" onclick="showStory('abyss')">
+  </map>
+
+  <!-- Story box -->
+  <div id="storyBox">Click on something in the picture to reveal its tale...</div>
+
+  <script>
+    function showStory(part) {
+      let stories = {
+        abyss: "Underwater space of Kuberarth. No one saw whats lies on the bottom. No sun light reach that deep. No walls or surface. Just the void with species of cruel deep ocean...",
+      };
+      document.getElementById("storyBox").innerHTML = stories[part];
+    }
+  </script>
+  <button onclick="location.href='gallery.html'">
+  ⬅ Back to Gallery
+  </button>
+button {
+  padding: 10px 20px;
+  margin: 10px;
+  background: #444;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background 0.2s;
+}
+
+button:hover {
+  background: #666;
+}
+
+</body>
+</html>
