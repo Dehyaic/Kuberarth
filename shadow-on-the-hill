@@ -48,8 +48,8 @@
   <script>
     function showStory(part) {
       let stories = {
-        shadow: "The shadow stretches unnaturally, as if it belongs to something unseen, whispering of things buried deeper than the graves.",
-        tombstone: "The largest stone bears no name, yet visitors leave offerings at its base, fearing what rests beneath.",
+        shadow: "There is a shadow on the hill. Locals have plennty of stories about the shadow. Some says shadow is a devil, trying to get into the minds and drag them to their death. And some says it's a old deity, who watches the creations with malicious kindness.",
+        tombstone: "The largest stone bears no name, yet fearing what rests beneath.",
         robe: "The robed figure stands silent. Some say they mourn. Others say they wait."
       };
       document.getElementById("storyBox").innerHTML = stories[part];
@@ -58,6 +58,21 @@
   <button onclick="location.href='gallery.html'">
   ⬅ Back to Gallery
   </button>
+button {
+  padding: 10px 20px;
+  margin: 10px;
+  background: #444;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background 0.2s;
+}
+
+button:hover {
+  background: #666;
+}
 
 </body>
 </html>
