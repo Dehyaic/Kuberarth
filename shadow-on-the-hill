@@ -55,6 +55,9 @@
       document.getElementById("storyBox").innerHTML = stories[part];
     }
   </script>
+  <button onclick="location.href='gallery.html'">
+  ⬅ Back to Gallery
+  </button>
 
 </body>
 </html>
