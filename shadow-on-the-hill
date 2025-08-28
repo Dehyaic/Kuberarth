@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Shadow on the Hill</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #111;
+      color: #eee;
+      text-align: center;
+      padding: 20px;
+    }
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+    #storyBox {
+      margin-top: 20px;
+      padding: 15px;
+      border-radius: 8px;
+      background: rgba(0,0,0,0.7);
+      display: inline-block;
+      max-width: 500px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Shadow on the Hill</h1>
+
+  <!-- Your drawing -->
+  <img src="shadow-on-the-hill.png" alt="Shadow on the Hill" usemap="#hillmap">
+
+  <!-- Clickable zones -->
+  <map name="hillmap">
+    <!-- Shadow -->
+    <area shape="circle" coords="665,126,40" alt="Shadow" onclick="showStory('shadow')">
+    <!-- Tombstone -->
+    <area shape="circle" coords="676,416,40" alt="Tombstone" onclick="showStory('tombstone')">
+    <!-- Robed person -->
+    <area shape="circle" coords="624,333,40" alt="Robe" onclick="showStory('robe')">
+  </map>
+
+  <!-- Story box -->
+  <div id="storyBox">Click on something in the picture to reveal its tale...</div>
+
+  <script>
+    function showStory(part) {
+      let stories = {
+        shadow: "The shadow stretches unnaturally, as if it belongs to something unseen, whispering of things buried deeper than the graves.",
+        tombstone: "The largest stone bears no name, yet visitors leave offerings at its base, fearing what rests beneath.",
+        robe: "The robed figure stands silent. Some say they mourn. Others say they wait."
+      };
+      document.getElementById("storyBox").innerHTML = stories[part];
+    }
+  </script>
+
+</body>
+</html>
