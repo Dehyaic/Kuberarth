@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Gallery</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background: #111;
+      color: #fff;
+    }
+    button {
+      padding: 10px 20px;
+      margin: 10px;
+      background: #444;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: background 0.2s;
+    }
+    button:hover {
+      background: #666;
+    }
+  </style>
+</head>
+<body>
+  <h1>Gallery</h1>
+  
+  <button onclick="location.href='shadow-on-the-hill.html'">
+    Shadow on the Hill
+  </button>
+  
+  <!-- add more buttons here later for other drawings -->
+
+  <br><br>
+  <button onclick="location.href='index.html'">
+    ⬅ Back to Characters
+  </button>
+</body>
+</html>
