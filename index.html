@@ -14,6 +14,26 @@
     h1 {
       margin-bottom: 20px;
     }
+    
+    .top-nav {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+    }
+    .top-nav a {
+      background: #333;
+      color: #fff;
+      text-decoration: none;
+      padding: 10px 16px;
+      margin-left: 10px;
+      border-radius: 8px;
+      font-size: 14px;
+      transition: 0.2s;
+    }
+    .top-nav a:hover {
+      background: #555;
+    }
+
     .oc-list a {
       display: block;
       background: #fff;
@@ -33,19 +53,17 @@
 </head>
 <body>
 
+  <div class="top-nav">
+    <a href="gallery.html">Go to Gallery</a>
+    <a href="stories.html">Go to Stories</a>
+  </div>
+
   <h1>Welcome to Kuberarth</h1>
   <p>Click a character to see their profile:</p>
 
   <div class="oc-list">
     <a href="dehy.html" target="_blank">Dehy (Dehyaic)</a>
   </div>
-  <button onclick="location.href='gallery.html'">
-  Go to Gallery
-</button>
-  </div>
-  <button onclick="location.href='stories.html'">
-  Go to Stories
-</button>
-  
+
 </body>
 </html>
